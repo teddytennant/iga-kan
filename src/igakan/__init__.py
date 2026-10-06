@@ -1,25 +1,39 @@
-"""1D isogeometric Kolmogorov-Arnold network toy fit."""
+"""Local ridge post-process on the unit square."""
 
 import os
 
 os.environ.setdefault("JAX_PLATFORMS", "cpu")
 
-import jax
-
-jax.config.update("jax_enable_x64", True)
-
 from igakan.model import (
-    accept_if_improved,
+    accept_patch,
     bernstein,
+    bernstein_deriv,
+    blend,
+    blend_with_fallback,
+    circumradius,
+    evaluate_local,
+    fit_local,
     hat_functions,
-    local_predict,
-    safeguarded_fit,
+    nodal_interpolant,
+    physics_block_residual,
+    support_box,
+    tensor_gauss_points,
+    unit_directions,
 )
 
 __all__ = [
-    "accept_if_improved",
+    "accept_patch",
     "bernstein",
+    "bernstein_deriv",
+    "blend",
+    "blend_with_fallback",
+    "circumradius",
+    "evaluate_local",
+    "fit_local",
     "hat_functions",
-    "local_predict",
-    "safeguarded_fit",
+    "nodal_interpolant",
+    "physics_block_residual",
+    "support_box",
+    "tensor_gauss_points",
+    "unit_directions",
 ]
